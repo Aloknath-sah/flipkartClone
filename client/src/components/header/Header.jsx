@@ -23,7 +23,7 @@ export const Header = () => {
         <AppBar className={classes.header}>
             <Toolbar>
                 <img src={logoUrl} className={classes.logo} />
-                <Typography>Explore Plus</Typography>
+                <Typography>Explore Plusd</Typography>
                 <img src={subUrl} className={classes.subUrl} />
             </Toolbar>
         </AppBar>
