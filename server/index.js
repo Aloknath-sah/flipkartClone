@@ -1,7 +1,15 @@
-const express = require("express")
+import express from "express";
+import dotenv from 'dotenv';
 
-const app = express()
+//components
+import connection from './database/db.js'
 
-const PORT = 8000
+const app = express();
 
-app.listen(PORT, () => console.log(`server is successfully running on PORT ${PORT}`))
+const PORT = 8000;
+
+connection()
+
+app.listen(PORT, () =>
+  console.log(`server is successfully running on PORT ${PORT}`)
+);
