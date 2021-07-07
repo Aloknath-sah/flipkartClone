@@ -5,7 +5,7 @@ import { Box, makeStyles, Typography } from "@material-ui/core";
 const useStyle = makeStyles({
     component: {
         display: "flex",
-        margin: "55px 130px",
+        margin: "55px 130px 0 130px",
     },
     container: {
         textAlign: "center", 

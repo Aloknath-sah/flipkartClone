@@ -6,6 +6,7 @@ import {
   Typography,
   Box,
 } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 
 //components
 import { SearchBar } from "./SearchBar";
@@ -29,7 +30,9 @@ const useStyle = makeStyles({
   },
   component: {
       marginLeft: "12%",
-      lineHeight: 0.5
+      lineHeight: 0.5,
+      textDecoration: "none",
+      color: "white"
   },
   subheading: {
       fontSize: 13,
@@ -46,13 +49,13 @@ export const Header = () => {
   return (
     <AppBar className={classes.header}>
       <Toolbar>
-        <Box className={classes.component}>
+        <Link to="/" className={classes.component}>
           <img src={logoUrl} className={classes.logo} />
           <Box className={classes.container}>
             <Typography className={classes.subheading} > Join <Box component="span" style={{color: "#ffe11b", fontWeight: "bold"}}> Plus</Box> </Typography>
             <img src={subUrl} className={classes.subUrl} />
           </Box>
-        </Box>
+        </Link>
         <SearchBar/>
         <HeaderButton/>
       </Toolbar>
