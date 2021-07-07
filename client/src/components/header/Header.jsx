@@ -9,11 +9,12 @@ import {
 
 //components
 import { SearchBar } from "./SearchBar";
+import { HeaderButton } from "./HeaderButton";
 
 const useStyle = makeStyles({
   header: {
     background: "#2874f0",
-    height: 55,
+    height: 64,
   },
   logo: {
     width: 75,
@@ -28,10 +29,10 @@ const useStyle = makeStyles({
   },
   component: {
       marginLeft: "12%",
-      lineHeight: 1
+      lineHeight: 0.5
   },
   subheading: {
-      fontSize: 10,
+      fontSize: 13,
       fontStyle: "italic"
   }
 });
@@ -48,11 +49,12 @@ export const Header = () => {
         <Box className={classes.component}>
           <img src={logoUrl} className={classes.logo} />
           <Box className={classes.container}>
-            <Typography className={classes.subheading} >Explore Plus</Typography>
+            <Typography className={classes.subheading} > Join <Box component="span" style={{color: "#ffe11b", fontWeight: "bold"}}> Plus</Box> </Typography>
             <img src={subUrl} className={classes.subUrl} />
           </Box>
         </Box>
         <SearchBar/>
+        <HeaderButton/>
       </Toolbar>
     </AppBar>
   );

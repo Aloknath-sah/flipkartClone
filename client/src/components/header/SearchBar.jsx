@@ -4,28 +4,26 @@ import SearchIcon from "@material-ui/icons/Search";
 
 const useStyle = makeStyles((theme) => ({
   search: {
-    borderRadius: theme.shape.borderRadius,
+    borderRadius: 2,
     backgroundColor: "#fff",
     marginLeft: 10,
     width: "38%",
-    display: "flex"
+    display: "flex",
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
+    padding: 5,
     height: "100%",
     color: "blue",
     pointerEvents: "none",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
   },
   inputRoot: {
-    color: "inherit",
-    width: "100%"
+    fontSize: "87%",
+    width: "100%",
+    color: "black",
   },
   inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-   
+    paddingLeft: 20,
   },
 }));
 
@@ -34,7 +32,7 @@ export const SearchBar = () => {
   return (
     <div className={classes.search}>
       <InputBase
-        placeholder="Search…"
+        placeholder="Search for products, brands and more"
         classes={{
           root: classes.inputRoot,
           input: classes.inputInput,
