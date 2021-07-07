@@ -15,20 +15,17 @@ const useStyle = makeStyles({
     margin: "0 5% 0 auto",
     display: "flex",
     alignItems: "center",
-    
+
     "& > *": {
       marginRight: 50,
-      
     },
-    
   },
   container: {
     display: "flex",
     "& > *": {
-        marginLeft: 10,
-        
-      },
-},
+      marginLeft: 10,
+    },
+  },
 });
 
 export const HeaderButton = () => {
@@ -43,7 +40,7 @@ export const HeaderButton = () => {
         <Badge badgeContent={4} color="secondary">
           <ShoppingCart />
         </Badge>
-        <Typography >Cart</Typography>
+        <Typography>Cart</Typography>
       </Box>
     </Box>
   );
