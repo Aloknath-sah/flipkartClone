@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles, Box, Button, Typography, Badge } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+//component
+import { LoginDialog } from "../login/LoginDialog";
 
 const useStyle = makeStyles({
   login: {
@@ -10,7 +13,7 @@ const useStyle = makeStyles({
     textTransform: "unset",
     fontWeight: 600,
     borderRadius: 2,
-    padding: "5px 40px",
+    padding: "5px 40px"
   },
   wrapper: {
     margin: "0 5% 0 auto",
@@ -19,12 +22,12 @@ const useStyle = makeStyles({
 
     "& > *": {
       marginRight: 50,
-      textDecoration: "none"
+      textDecoration: "none",
     },
   },
   container: {
     display: "flex",
-    textDecoration:"none",
+    textDecoration: "none",
     color: "white",
     "& > *": {
       marginLeft: 10,
@@ -34,19 +37,31 @@ const useStyle = makeStyles({
 
 export const HeaderButton = () => {
   const classes = useStyle();
+  const [open, setOpen] = useState(false);
+
+  const openLoginDialog = () => {
+    setOpen(true);
+  };
   return (
     <Box className={classes.wrapper}>
-      <Link to="/login" > <Button varient="contained" className={classes.login}>
+      <Button
+        varient="contained"
+        className={classes.login}
+        onClick={() => openLoginDialog()}
+      >
         Login
       </Button>
+
+      <Link to="/more">
+        <Typography style={{color: "white"}}>More</Typography>
       </Link>
-      <Link to="/more" ><Typography>More</Typography></Link>
       <Link to="/cart" className={classes.container}>
         <Badge badgeContent={4} color="secondary">
           <ShoppingCart />
         </Badge>
         <Typography>Cart</Typography>
       </Link>
+      <LoginDialog open={open} setOpen={setOpen} />
     </Box>
   );
 };
